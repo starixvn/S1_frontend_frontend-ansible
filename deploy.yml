@@ -2,9 +2,9 @@
   hosts: "{{ host }}"
   serial: 1
   vars:
-    filename: "{{ platform }}-{{ site }}-{{ Version }}"
+    filename: "{{ platform }}-{{ site }}-{{ commitId }}"
   tasks:
-      - name: "Down {{ Version }} to target machine"
+      - name: "Down {{ filename }} to target machine"
         win_get_url:
           url: "http://13.213.82.69:8081/repository/artifacts/Frontend/{{ filename }}.zip"
           dest: "E:\\deploy temp\\{{ filename }}.zip"
