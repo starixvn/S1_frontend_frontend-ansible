@@ -12,4 +12,4 @@ dev:
       hosts:
         Mobile-Nova88-01:
           ansible_host: 52.77.157.115
-          dest_path: "E:\\Nginx\\nginx-1.18.0\\nginx-1.18.0\html\\Nova88\Mobile"
+          dest_path: "E:\\Nginx\\nginx-1.18.0\\nginx-1.18.0\html\\Nova88\\Mobile"
