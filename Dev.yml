@@ -1,0 +1,15 @@
+dev:
+  vars:
+    ansible_ssh_port: 5986
+    ansible_connection: winrm
+    ansible_password: "D!S@RfyoyHI;7IJKqLK7DviAE8DRfVqw"
+    ansible_ssh_user: "Administrator"
+    ansible_winrm_transport: credssp
+    ansible_winrm_scheme: https
+    ansible_winrm_server_cert_validation: ignore
+  children:
+    Mobile-Nova88:
+      hosts:
+        Mobile-Nova88-01:
+          ansible_host: 52.77.157.115
+          dest_path: "E:\\Nginx\\nginx-1.18.0\\nginx-1.18.0\html\\Nova88\Mobile"
