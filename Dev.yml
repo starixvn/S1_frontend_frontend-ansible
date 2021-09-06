@@ -23,3 +23,18 @@ dev:
         Mobile-Bwing-01:
           ansible_host: 52.77.157.115
           dest_path: "E:\\Nginx\\nginx-1.18.0\\nginx-1.18.0\\html\\Bwing\\Mobile"
+    desktop-nova88:
+      hosts:
+        Desktop-Nova88-01:
+          ansible_host: 52.77.157.115
+          dest_path: "E:\\Nginx\\nginx-1.18.0\\nginx-1.18.0\\html\\Nova88\\Desktop"
+    desktop-goal123:
+      hosts:
+        Desktop-Goal123-01:
+          ansible_host: 52.77.157.115
+          dest_path: "E:\\Nginx\\nginx-1.18.0\\nginx-1.18.0\\html\\Goal123\\Desktop"
+    desktop-bwing:
+      hosts:
+        Desktop-Bwing-01:
+          ansible_host: 52.77.157.115
+          dest_path: "E:\\Nginx\\nginx-1.18.0\\nginx-1.18.0\\html\\Bwing\\Desktop"
