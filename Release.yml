@@ -7,5 +7,5 @@ dev:
     mobile-nova88:
       hosts:
         Mobile-Nova88-01:
-          ansible_host: 10.4.194.24
+          ansible_host: 10.4.192.24
           dest_path: "\\var\\www\\Nova88\\releaseMobile"
