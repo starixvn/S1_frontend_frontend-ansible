@@ -15,7 +15,6 @@
           state: absent
 
       - name: "Deploy {{ filename }} Package"
-        unzip:
+        unarchive:
           src: "\\var\\www\\tmp\\{{ filename }}.zip"
           dest: "{{dest_path}}"
-          delete_archive: True
