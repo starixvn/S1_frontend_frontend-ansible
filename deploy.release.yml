@@ -16,5 +16,5 @@
 
       - name: "Deploy {{ filename }} Package"
         unarchive:
-          src: /var/www/tmp/{{ filename }}.zip"
+          src: /var/www/tmp/{{ filename }}.zip
           dest: "{{dest_path}}"
