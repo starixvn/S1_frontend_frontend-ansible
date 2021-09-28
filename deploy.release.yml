@@ -7,7 +7,7 @@
       - name: "Down {{ filename }} to target machine"
         win_get_url:
           url: "http://13.213.82.69:8081/repository/artifacts/Frontend/{{ platform }}/{{site}}/{{ environment }}/{{ filename }}.zip"
-          dest: "\\var\\tmp\\{{ filename }}.zip"
+          dest: "\\var\\www\\tmp\\{{ filename }}.zip"
 
       - name: "Clean Artifact {{dest_path}}"
         win_file:
@@ -16,6 +16,6 @@
 
       - name: "Deploy {{ filename }} Package"
         win_unzip:
-          src: "\\var\\tmp\\{{ filename }}.zip"
+          src: "\\var\\www\\tmp\\{{ filename }}.zip"
           dest: "{{dest_path}}"
           delete_archive: True
