@@ -9,10 +9,10 @@
           url: "http://13.213.82.69:8081/repository/artifacts/Frontend/{{ platform }}/{{site}}/{{ env }}/{{ filename }}.zip"
           dest: /var/www/tmp/{{ filename }}.zip
 
-      - name: "Clean Artifact {{dest_path}}"
-        file:
-          dest: "{{dest_path}}"
-          state: absent
+      # - name: "Clean Artifact {{dest_path}}"
+      #   file:
+      #     dest: "{{dest_path}}"
+      #     state: absent
 
       - name: "Deploy {{ filename }} Package"
         unarchive:
