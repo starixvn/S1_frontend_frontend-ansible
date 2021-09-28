@@ -2,11 +2,11 @@
   hosts: "{{ host }}"
   serial: 1
   vars:
-    filename: "{{ platform }}-{{ environment }}-{{ site }}-{{ commitId }}"
+    filename: "{{ platform }}-{{ site }}-{{ commitId }}"
   tasks:
       - name: "Down {{ filename }} to target machine"
         get_url:
-          url: "http://13.213.82.69:8081/repository/artifacts/Frontend/{{ platform }}/{{site}}/{{ environment }}/{{ filename }}.zip"
+          url: "http://13.213.82.69:8081/repository/artifacts/Frontend/{{ platform }}/{{site}}/{{ env }}/{{ filename }}.zip"
           dest: "\\var\\www\\tmp\\{{ filename }}.zip"
 
       - name: "Clean Artifact {{dest_path}}"
