@@ -10,12 +10,12 @@
           dest: /var/www/tmp/{{ filename }}.zip
 
       - name: "Clean Artifact {{dest_path}}"
-        win_file:
+        file:
           dest: "{{dest_path}}"
           state: absent
 
       - name: "Deploy {{ filename }} Package"
-        win_unzip:
+        unzip:
           src: "\\var\\www\\tmp\\{{ filename }}.zip"
           dest: "{{dest_path}}"
           delete_archive: True
