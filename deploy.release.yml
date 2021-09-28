@@ -5,7 +5,7 @@
     filename: "{{ platform }}-{{ environment }}-{{ site }}-{{ commitId }}"
   tasks:
       - name: "Down {{ filename }} to target machine"
-        win_get_url:
+        get_url:
           url: "http://13.213.82.69:8081/repository/artifacts/Frontend/{{ platform }}/{{site}}/{{ environment }}/{{ filename }}.zip"
           dest: "\\var\\www\\tmp\\{{ filename }}.zip"
 
