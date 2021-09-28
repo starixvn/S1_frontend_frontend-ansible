@@ -18,3 +18,4 @@
         unarchive:
           src: /var/www/tmp/{{ filename }}.zip
           dest: "{{dest_path}}"
+          remote_src: yes
