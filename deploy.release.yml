@@ -4,6 +4,11 @@
   vars:
     filename: "{{ platform }}-{{ site }}-{{ commitId }}"
   tasks:
+      - name: "Ensure temp folder exists"
+        file:
+          path: /var/www/tmp/{{ env }}
+          state: directory
+
       - name: "Down {{ filename }} to target machine"
         get_url:
           url: "http://13.213.82.69:8081/repository/artifacts/Frontend/{{ platform }}/{{site}}/{{ env }}/{{ filename }}.zip"
