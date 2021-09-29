@@ -9,3 +9,11 @@ dev:
         Mobile-Nova88-01:
           ansible_host: 10.4.194.24
           dest_path: /var/www/Nova88/releaseMobile
+
+        Mobile-Goal123-01:
+          ansible_host: 10.4.194.24
+          dest_path: /var/www/Goal123/releaseMobile
+
+        Mobile-Bwing-01:
+          ansible_host: 10.4.194.24
+          dest_path: /var/www/Bwing/releaseMobile
