@@ -1,8 +1,8 @@
 dev:
   vars:
     ansible_ssh_port: 22
-    ansible_password: "1q2w3e4r"
-    ansible_ssh_user: "twteam"
+    ansible_ssh_user: "jenkins"
+    ansible_password: "jukilo!QAZ"
   children:
     mobile-nova88:
       hosts:
