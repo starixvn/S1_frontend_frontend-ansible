@@ -23,12 +23,14 @@
         file:
           path: "{{dest_path}}"
           state: directory
+          mode: 777
 
       - name: "Deploy {{ filename }} Package"
         unarchive:
           src: /var/www/tmp/{{ env }}/{{ filename }}.zip
           dest: "{{dest_path}}"
           remote_src: yes
+          mode: 777
 
       - name: "Clean tmp file"
         file:
