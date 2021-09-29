@@ -30,7 +30,7 @@
           src: /var/www/tmp/{{ env }}/{{ filename }}.zip
           dest: "{{dest_path}}"
           remote_src: yes
-          mode: 777
+          mode: "rwx"
 
       - name: "Clean tmp file"
         file:
