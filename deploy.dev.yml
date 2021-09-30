@@ -2,7 +2,7 @@
   hosts: "{{ host }}"
   serial: 1
   vars:
-    filename: "{{ platform }}-{{ env }}-{{ site }}-{{ commitId }}"
+    filename: "{{ platform }}-{{ site }}-{{ commitId }}"
   tasks:
       - name: "Down {{ filename }} to target machine"
         win_get_url:
