@@ -21,3 +21,21 @@ dev:
         Mobile-Bwing-01:
           ansible_host: 10.4.194.24
           dest_path: /var/www/Bwing/releaseMobile
+
+    desktop-nova88:
+      hosts:
+        Desktop-Nova88-01:
+          ansible_host: 10.4.194.24
+          dest_path: /var/www/Nova88/releaseDesktop
+    
+    desktop-goal123:
+      hosts:
+        Desktop-Goal123-01:
+          ansible_host: 10.4.194.24
+          dest_path: /var/www/Goal123/releaseDesktop
+
+    desktop-bwing:
+      hosts:
+        Desktop-Bwing-01:
+          ansible_host: 10.4.194.24
+          dest_path: /var/www/Bwing/releaseDesktop
