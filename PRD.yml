@@ -1,0 +1,41 @@
+dev:
+  vars:
+    ansible_ssh_port: 22
+    ansible_ssh_user: "jenkins"
+    ansible_password: "jukilo!QAZ"
+  children:
+    mobile-nova88:
+      hosts:
+        Mobile-Nova88-01:
+          ansible_host: 10.4.194.24
+          dest_path: /var/www/Nova88/Mobile
+    
+    mobile-goal123:
+      hosts:
+        Mobile-Goal123-01:
+          ansible_host: 10.4.194.24
+          dest_path: /var/www/Goal123/Mobile
+
+    mobile-bwing:
+      hosts:
+        Mobile-Bwing-01:
+          ansible_host: 10.4.194.24
+          dest_path: /var/www/Bwing/Mobile
+
+    desktop-nova88:
+      hosts:
+        Desktop-Nova88-01:
+          ansible_host: 10.4.194.24
+          dest_path: /var/www/Nova88/Desktop
+    
+    desktop-goal123:
+      hosts:
+        Desktop-Goal123-01:
+          ansible_host: 10.4.194.24
+          dest_path: /var/www/Goal123/Desktop
+
+    desktop-bwing:
+      hosts:
+        Desktop-Bwing-01:
+          ansible_host: 10.4.194.24
+          dest_path: /var/www/Bwing/Desktop
