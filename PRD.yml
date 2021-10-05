@@ -8,34 +8,34 @@ dev:
       hosts:
         Mobile-Nova88-01:
           ansible_host: 10.4.194.24
-          dest_path: /var/www/Nova88/Mobile
+          dest_path: /var/www/Nova88/mobile
     
     mobile-goal123:
       hosts:
         Mobile-Goal123-01:
           ansible_host: 10.4.194.24
-          dest_path: /var/www/Goal123/Mobile
+          dest_path: /var/www/Goal123/mobile
 
     mobile-bwing:
       hosts:
         Mobile-Bwing-01:
           ansible_host: 10.4.194.24
-          dest_path: /var/www/Bwing/Mobile
+          dest_path: /var/www/Bwing/mobile
 
     desktop-nova88:
       hosts:
         Desktop-Nova88-01:
           ansible_host: 10.4.194.24
-          dest_path: /var/www/Nova88/Desktop
+          dest_path: /var/www/Nova88/desktop
     
     desktop-goal123:
       hosts:
         Desktop-Goal123-01:
           ansible_host: 10.4.194.24
-          dest_path: /var/www/Goal123/Desktop
+          dest_path: /var/www/Goal123/desktop
 
     desktop-bwing:
       hosts:
         Desktop-Bwing-01:
           ansible_host: 10.4.194.24
-          dest_path: /var/www/Bwing/Desktop
+          dest_path: /var/www/Bwing/desktop
