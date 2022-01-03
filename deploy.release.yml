@@ -3,6 +3,10 @@
   serial: 1
   vars:
     filename: "{{ platform }}-{{ site }}-{{ commitId }}"
+
+  environment:
+    http_proxy: http://10.4.194.104:3128
+
   tasks:
       - name: "Ensure temp folder exists"
         file:
@@ -13,6 +17,7 @@
         get_url:
           url: "http://13.213.82.69:8081/repository/artifacts/Frontend/{{ platform }}/{{site}}/{{ env }}/{{ filename }}.zip"
           dest: /var/www/tmp/{{ env }}/{{ filename }}.zip
+          use_proxy: yes
 
       - name: "Clean Artifact {{dest_path}}"
         file:
