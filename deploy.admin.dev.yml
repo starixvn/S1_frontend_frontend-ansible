@@ -1,4 +1,4 @@
-- name: "Deploy {{ site }}"
+- name: "Deploy {{ host }}"
   hosts: "{{ host }}"
   serial: 1
   vars:
