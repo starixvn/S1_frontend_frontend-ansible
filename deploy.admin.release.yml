@@ -14,13 +14,13 @@
         state: directory
 
     - name: "Down {{ filename }} to target machine"
-      win_get_url:
+      get_url:
         url: "http://13.213.82.69:8081/repository/artifacts/Backend/{{ env }}/{{ filename }}.zip"
         dest: /var/www/tmp/{{ env }}/{{ filename }}.zip
         use_proxy: yes
 
     - name: "Clean Artifact {{dest_path}}"
-      win_file:
+      file:
         dest: "{{dest_path}}"
         state: absent
 
