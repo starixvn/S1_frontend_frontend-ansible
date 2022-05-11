@@ -1,0 +1,21 @@
+- name: "Deploy {{ site }}"
+  hosts: "{{ host }}"
+  serial: 1
+  vars:
+    filename: "admin-{{ env }}-{{ commitId }}"
+  tasks:
+    - name: "Down {{ filename }} to target machine"
+      win_get_url:
+        url: "http://13.213.82.69:8081/repository/artifacts/Backend/{{ env }}/{{ filename }}.zip"
+        dest: "E:\\deploy temp\\{{ filename }}.zip"
+
+    - name: "Clean Artifact {{dest_path}}"
+      win_file:
+        dest: "{{dest_path}}"
+        state: absent
+
+    - name: "Deploy {{ filename }} Package"
+      win_unzip:
+        src: "E:\\deploy temp\\{{ filename }}.zip"
+        dest: "{{dest_path}}"
+        delete_archive: True
