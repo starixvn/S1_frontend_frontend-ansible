@@ -9,7 +9,7 @@ dev:
         Mobile-Nova88-01:
           ansible_host: 10.4.194.24
           dest_path: /var/www/Nova88/mobile
-    
+
     mobile-goal123:
       hosts:
         Mobile-Goal123-01:
@@ -27,7 +27,7 @@ dev:
         Desktop-Nova88-01:
           ansible_host: 10.4.194.24
           dest_path: /var/www/Nova88/desktop
-    
+
     desktop-goal123:
       hosts:
         Desktop-Goal123-01:
@@ -39,3 +39,8 @@ dev:
         Desktop-Bwing-01:
           ansible_host: 10.4.194.24
           dest_path: /var/www/Bwing/desktop
+    admin:
+      hosts:
+        Admin-01:
+          ansible_host: 10.4.194.23
+          dest_path: /var/www/Admin/PRD
