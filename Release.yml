@@ -44,3 +44,8 @@ dev:
         Admin-01:
           ansible_host: 10.4.194.23
           dest_path: /var/www/Admin/Release
+    reward:
+      hosts:
+        Reward-01:
+          ansible_host: 10.4.194.24
+          dest_path: "/var/www/release/rewards"

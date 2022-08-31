@@ -1,0 +1,41 @@
+- name: "Deploy {{ project }}"
+  hosts: "{{ host }}"
+  serial: 1
+
+  environment:
+    http_proxy: http://10.4.194.104:3128
+
+  tasks:
+      - name: "Ensure temp folder exists"
+        file:
+          path: /var/www/tmp/{{ env }}
+          state: directory
+
+      - name: "Down {{ filename }} to target machine"
+        get_url:
+          url: "http://13.213.82.69:8081/repository/artifacts/Frontend/{{ project }}/{{ env }}/{{ filename }}.zip"
+          dest: /var/www/tmp/{{ env }}/{{ filename }}.zip
+          use_proxy: yes
+
+      - name: "Clean Artifact {{dest_path}}"
+        file:
+          dest: "{{dest_path}}"
+          state: absent
+
+      - name: "Recreate folder {{dest_path}}"
+        file:
+          path: "{{dest_path}}"
+          state: directory
+          mode: '777'
+
+      - name: "Deploy {{ filename }} Package"
+        unarchive:
+          src: /var/www/tmp/{{ env }}/{{ filename }}.zip
+          dest: "{{dest_path}}"
+          remote_src: yes
+          mode: "777"
+
+      - name: "Clean tmp file"
+        file:
+          path: /var/www/tmp/{{ env }}/{{ filename }}.zip
+          state: absent

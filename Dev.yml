@@ -43,3 +43,8 @@ dev:
         Admin-01:
           ansible_host: 52.77.157.115
           dest_path: "E:\\Nginx\\nginx-1.18.0\\nginx-1.18.0\\html\\Admin"
+    reward:
+      hosts:
+        Reward-01:
+          ansible_host: 52.77.157.115
+          dest_path: "E:\\Nginx\\nginx-1.18.0\\nginx-1.18.0\\html\\rewards"
