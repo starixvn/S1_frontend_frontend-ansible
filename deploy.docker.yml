@@ -1,0 +1,48 @@
+- name: "deploy docker"
+  hosts: "{{ host }}"
+  serial: 1
+  vars:
+    env: "{{env}}"
+    url: "13.213.82.69"
+  tasks:
+    - name: "Docker login {{url}}"
+      docker_login:
+        registry_url: "{{url}}"
+        username: "admin"
+        password: "1ye7Bu46"
+
+    - name: "Pull an image {{url}}/{{ver}}"
+      docker_image:
+        name: "{{url}}/{{ver}}"
+        source: pull
+      register: result
+      retries: 10
+      delay: 3
+      until: result is succeeded
+
+    - name: Get infos on container
+      docker_container_info:
+        name: "{{ docker_name }}"
+      register: result
+
+    - name: "Stop Docker images"
+      docker_container:
+        name: "{{ docker_name }}"
+        state: stopped
+      when: result.exists
+
+    - name: "Remove Docker images"
+      docker_container:
+        name: "{{ docker_name }}"
+        state: absent
+      when: result.exists
+
+    - name: "Run Docker images {{url}}/{{ver}}"
+      docker_container:
+        name: "{{ docker_name }}"
+        image: "{{url}}/{{ver}}"
+        state: started
+        ports: "{{ docker_ports | default([]) }}"
+        restart_policy: always
+        volumes:
+           - "{{ volume | default([]) }}"

@@ -1,0 +1,10 @@
+dev:
+  vars:
+    ansible_user: "jenkins"
+    ansible_python_interpreter: "/usr/bin/python3"
+
+  children:
+    linux-dev:
+      hosts:
+        linux-dev-01:
+          ansible_host: 172.31.17.90
