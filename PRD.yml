@@ -14,7 +14,7 @@ dev:
       hosts:
         Mobile-Ivorysport-01:
           ansible_host: 10.4.194.24
-          dest_path: /var/www/Ivorysports/mobile
+          dest_path: /var/www/Ivorysport/mobile
 
     mobile-goal123:
       hosts:
