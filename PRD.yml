@@ -10,6 +10,12 @@ dev:
           ansible_host: 10.4.194.24
           dest_path: /var/www/Nova88/mobile
 
+    mobile-ivorysport:
+      hosts:
+        Mobile-Ivorysport-01:
+          ansible_host: 10.4.194.24
+          dest_path: /var/www/Ivorysports/mobile
+
     mobile-goal123:
       hosts:
         Mobile-Goal123-01:
@@ -27,6 +33,12 @@ dev:
         Desktop-Nova88-01:
           ansible_host: 10.4.194.24
           dest_path: /var/www/Nova88/desktop
+
+    desktop-ivorysport:
+      hosts:
+        Desktop-Ivorysport-01:
+          ansible_host: 10.4.194.24
+          dest_path: /var/www/Ivorysport/desktop
 
     desktop-goal123:
       hosts:
